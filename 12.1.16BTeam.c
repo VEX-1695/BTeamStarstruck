@@ -54,7 +54,22 @@ void pre_auton()
 /*                                                                           */
 /*  You must modify the code to add your own robot specific commands here.   */
 /*---------------------------------------------------------------------------*/
-
+void autoDrive(float speed, float sec)
+{
+	motor(frontLeft) = speed;
+	motor(frontRight) = speed;
+	motor(backLeft) = speed;
+	motor(backRight) = speed;
+	sec *=1000;
+	wait1Msec(sec);
+}
+void autoDrive(float speed)
+{
+	motor(frontLeft) = speed;
+	motor(frontRight) = speed;
+	motor(backLeft) = speed;
+	motor(backRight) = speed;
+}
 task autonomous()
 {
   // ..........................................................................
